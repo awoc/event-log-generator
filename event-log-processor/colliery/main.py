@@ -77,7 +77,7 @@ def create_extensions(log: EventLog) -> dict[str, str]:
     extensions = deepcopy(log.extensions)
     extensions["Message"] = {
         "prefix": "message",
-        "uri": "https://cpee.org/~demo/corrins/message.xesext",
+        "uri": "https://raw.githubusercontent.com/awoc/distributed-discovery/main/message.xesext",
     }
 
     return extensions

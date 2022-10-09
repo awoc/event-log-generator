@@ -166,7 +166,7 @@ def write_event_log(file_obj: TextIO, traces: list[Trace]) -> None:
         """\t<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext" /> \n"""
     )
     file_obj.write(
-        """\t<extension name="Message" prefix="message" uri="https://cpee.org/~demo/corrins/message.xesext" /> \n"""
+        """\t<extension name="Message" prefix="message" uri="https://raw.githubusercontent.com/awoc/distributed-discovery/main/message.xesext" /> \n"""
     )
 
     for trace in traces:
