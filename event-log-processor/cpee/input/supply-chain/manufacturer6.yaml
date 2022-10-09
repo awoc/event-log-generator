@@ -1,0 +1,1162 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 3400
+    cpee:name: Manufacturer
+    cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+---
+event:
+  concept:instance: 3400
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: state/change
+  cpee:state: ready
+  time:timestamp: '2022-05-18T18:32:53.004+02:00'
+---
+event:
+  concept:instance: 3400
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - instance
+    data_values:
+      instance: '6'
+  time:timestamp: '2022-05-18T18:32:53.019+02:00'
+---
+event:
+  concept:instance: 3400
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - timeout
+    - mesg
+    - corr
+    data_values:
+      timeout: https://cpee.org/services/timeout.php
+      mesg: https://cpee.org/~demo/corrins/mesg.php
+      corr: https://cpee.org/~demo/corrins/corr.php
+  time:timestamp: '2022-05-18T18:32:53.036+02:00'
+---
+event:
+  concept:instance: 3400
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - creator
+    - author
+    - modeltype
+    - guarded
+    - guarded_id
+    - model_uuid
+    - model_version
+    - theme
+    - design_dir
+    - design_stage
+    data_values:
+      info: Manufacturer
+      creator: Christine Ashcreek
+      author: Christine Ashcreek
+      modeltype: CPEE
+      guarded: none
+      guarded_id: ''
+      model_uuid: d14dc17f-3c09-4f15-aa58-98a8e0baf61b
+      model_version: ''
+      theme: extended
+      design_dir: Distributed.dir
+      design_stage: development
+  time:timestamp: '2022-05-18T18:32:53.044+02:00'
+---
+event:
+  concept:instance: 3400
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: description/change
+  cpee:description: |
+    <?xml version="1.0"?>
+    <description xmlns="http://cpee.org/ns/description/1.0">
+      <call id="a1" endpoint="corr">
+        <parameters>
+          <label>Receive Order</label>
+          <method>:post</method>
+          <arguments>
+            <value>!"order_" + data.instance.to_s + ".xml"</value>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a2" endpoint="timeout">
+        <parameters>
+          <label>Process Order</label>
+          <method>:post</method>
+          <arguments>
+            <timeout>20</timeout>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a3" endpoint="timeout">
+        <parameters>
+          <label>Calculate Required Parts</label>
+          <method>:post</method>
+          <arguments>
+            <timeout>10</timeout>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <parallel wait="-1" cancel="last">
+        <parallel_branch pass="" local="">
+          <call id="a4" endpoint="mesg">
+            <parameters>
+              <label>Order Part B</label>
+              <method>:post</method>
+              <arguments>
+                <file>!"order_b_" + data.instance.to_s + ".xml"</file>
+              </arguments>
+            </parameters>
+            <annotations>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <_context_data_analysis>
+                  <probes/>
+                  <ips/>
+                </_context_data_analysis>
+                <report>
+                  <url/>
+                </report>
+                <explanations/>
+              </_timing>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+          <call id="a6" endpoint="corr">
+            <parameters>
+              <label>Receive Order Status B</label>
+              <method>:post</method>
+              <arguments>
+                <value>!"order_status_b_" + data.instance.to_s + ".xml"</value>
+              </arguments>
+            </parameters>
+            <annotations>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <_context_data_analysis>
+                  <probes/>
+                  <ips/>
+                </_context_data_analysis>
+                <report>
+                  <url/>
+                </report>
+                <explanations/>
+              </_timing>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+        </parallel_branch>
+        <parallel_branch pass="" local="">
+          <call id="a5" endpoint="mesg">
+            <parameters>
+              <label>Order Product A</label>
+              <method>:post</method>
+              <arguments>
+                <file>!"order_a_" + data.instance.to_s + ".xml"</file>
+              </arguments>
+            </parameters>
+            <annotations>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <_context_data_analysis>
+                  <probes/>
+                  <ips/>
+                </_context_data_analysis>
+                <report>
+                  <url/>
+                </report>
+                <explanations/>
+              </_timing>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+          <call id="a7" endpoint="corr">
+            <parameters>
+              <label>Receive Order Status A</label>
+              <method>:post</method>
+              <arguments>
+                <value>!"order_status_a_" + data.instance.to_s + ".xml"</value>
+              </arguments>
+            </parameters>
+            <annotations>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <_context_data_analysis>
+                  <probes/>
+                  <ips/>
+                </_context_data_analysis>
+                <report>
+                  <url/>
+                </report>
+                <explanations/>
+              </_timing>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <call id="a8" endpoint="timeout">
+        <parameters>
+          <label>Estimate Delivery Date</label>
+          <method>:post</method>
+          <arguments>
+            <timeout>10</timeout>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a9" endpoint="mesg">
+        <parameters>
+          <label>Send Order Status Report</label>
+          <method>:post</method>
+          <arguments>
+            <file>!"order_status_" + data.instance.to_s + ".xml"</file>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <parallel wait="-1" cancel="last">
+        <parallel_branch pass="" local="">
+          <call id="a11" endpoint="corr">
+            <parameters>
+              <label>Receive Part B</label>
+              <method>:post</method>
+              <arguments>
+                <value>!"part_b_" + data.instance.to_s + ".xml"</value>
+              </arguments>
+            </parameters>
+            <annotations>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <_context_data_analysis>
+                  <probes/>
+                  <ips/>
+                </_context_data_analysis>
+                <report>
+                  <url/>
+                </report>
+                <explanations/>
+              </_timing>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+        </parallel_branch>
+        <parallel_branch pass="" local="">
+          <call id="a10" endpoint="corr">
+            <parameters>
+              <label>Receive Product A</label>
+              <method>:post</method>
+              <arguments>
+                <value>!"product_a_" + data.instance.to_s + ".xml"</value>
+              </arguments>
+            </parameters>
+            <annotations>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <_context_data_analysis>
+                  <probes/>
+                  <ips/>
+                </_context_data_analysis>
+                <report>
+                  <url/>
+                </report>
+                <explanations/>
+              </_timing>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <call id="a12" endpoint="timeout">
+        <parameters>
+          <label>Manufacture Product</label>
+          <method>:post</method>
+          <arguments>
+            <timeout>30</timeout>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a13" endpoint="timeout">
+        <parameters>
+          <label>Check Product</label>
+          <method>:post</method>
+          <arguments>
+            <timeout>15</timeout>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a14" endpoint="mesg">
+        <parameters>
+          <label>Deliver Product</label>
+          <method>:post</method>
+          <arguments>
+            <file>!"product_" + data.instance.to_s + ".xml"</file>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+    </description>
+  time:timestamp: '2022-05-18T18:32:53.052+02:00'
+---
+event:
+  concept:instance: 3400
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: state/change
+  cpee:state: running
+  time:timestamp: '2022-05-18T18:34:01.790+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: '0481cdb715376fc85d0d409a98e1fa13'
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: value
+      value: order_6.xml
+  time:timestamp: '2022-05-18T18:34:01.825+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: '0481cdb715376fc85d0d409a98e1fa13'
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/xml
+      data: '0'
+  time:timestamp: '2022-05-18T18:34:01.840+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: '0481cdb715376fc85d0d409a98e1fa13'
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:01.847+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Process Order
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: 899e5b2271aa291a2a574bc8dc44450f
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: timeout
+      value: '20'
+  time:timestamp: '2022-05-18T18:34:01.882+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Process Order
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: 899e5b2271aa291a2a574bc8dc44450f
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 'Timeout: 20'
+  time:timestamp: '2022-05-18T18:34:21.826+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Process Order
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: 899e5b2271aa291a2a574bc8dc44450f
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:21.844+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Calculate Required Parts
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 5715e45e247f36534c406d7c4002f568
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: timeout
+      value: '10'
+  time:timestamp: '2022-05-18T18:34:21.879+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Calculate Required Parts
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 5715e45e247f36534c406d7c4002f568
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 'Timeout: 10'
+  time:timestamp: '2022-05-18T18:34:31.862+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Calculate Required Parts
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 5715e45e247f36534c406d7c4002f568
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:31.886+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Order Part B
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 2143ba78b05a3fa1841aa39bb99b5939
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: file
+      value: order_b_6.xml
+  time:timestamp: '2022-05-18T18:34:31.922+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Order Product A
+  id:id: a5
+  cpee:activity: a5
+  cpee:activity_uuid: 9ab3b036943c58cb0069c3515aefdd4d
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: file
+      value: order_a_6.xml
+  time:timestamp: '2022-05-18T18:34:31.947+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Order Part B
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 2143ba78b05a3fa1841aa39bb99b5939
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2022-05-18T18:34:31.973+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Order Part B
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 2143ba78b05a3fa1841aa39bb99b5939
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:32.010+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order Status B
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 660dbd1a906256db61e14b2d59fe337b
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: value
+      value: order_status_b_6.xml
+  time:timestamp: '2022-05-18T18:34:32.068+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Order Product A
+  id:id: a5
+  cpee:activity: a5
+  cpee:activity_uuid: 9ab3b036943c58cb0069c3515aefdd4d
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2022-05-18T18:34:32.144+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Order Product A
+  id:id: a5
+  cpee:activity: a5
+  cpee:activity_uuid: 9ab3b036943c58cb0069c3515aefdd4d
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:32.155+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order Status A
+  id:id: a7
+  cpee:activity: a7
+  cpee:activity_uuid: 061da795c5135b3861536e0d2a14f0ee
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: value
+      value: order_status_a_6.xml
+  time:timestamp: '2022-05-18T18:34:32.210+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order Status B
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 660dbd1a906256db61e14b2d59fe337b
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2022-05-18T18:34:42.113+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order Status B
+  id:id: a6
+  cpee:activity: a6
+  cpee:activity_uuid: 660dbd1a906256db61e14b2d59fe337b
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:42.121+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order Status A
+  id:id: a7
+  cpee:activity: a7
+  cpee:activity_uuid: 061da795c5135b3861536e0d2a14f0ee
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2022-05-18T18:34:42.302+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Order Status A
+  id:id: a7
+  cpee:activity: a7
+  cpee:activity_uuid: 061da795c5135b3861536e0d2a14f0ee
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:42.389+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Estimate Delivery Date
+  id:id: a8
+  cpee:activity: a8
+  cpee:activity_uuid: 226cc44d7ac8086bc99ebdff59c8aae4
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: timeout
+      value: '10'
+  time:timestamp: '2022-05-18T18:34:42.470+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Estimate Delivery Date
+  id:id: a8
+  cpee:activity: a8
+  cpee:activity_uuid: 226cc44d7ac8086bc99ebdff59c8aae4
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 'Timeout: 10'
+  time:timestamp: '2022-05-18T18:34:52.417+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Estimate Delivery Date
+  id:id: a8
+  cpee:activity: a8
+  cpee:activity_uuid: 226cc44d7ac8086bc99ebdff59c8aae4
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:52.428+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Send Order Status Report
+  id:id: a9
+  cpee:activity: a9
+  cpee:activity_uuid: dd6057d2e1d38cdb3d7753b88a1913aa
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: file
+      value: order_status_6.xml
+  time:timestamp: '2022-05-18T18:34:52.473+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Send Order Status Report
+  id:id: a9
+  cpee:activity: a9
+  cpee:activity_uuid: dd6057d2e1d38cdb3d7753b88a1913aa
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2022-05-18T18:34:52.526+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Send Order Status Report
+  id:id: a9
+  cpee:activity: a9
+  cpee:activity_uuid: dd6057d2e1d38cdb3d7753b88a1913aa
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:34:52.534+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Product A
+  id:id: a10
+  cpee:activity: a10
+  cpee:activity_uuid: 1b59b72ae66a774c468e3974a4c26df6
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: value
+      value: product_a_6.xml
+  time:timestamp: '2022-05-18T18:34:52.568+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Part B
+  id:id: a11
+  cpee:activity: a11
+  cpee:activity_uuid: 2246c4c7caf41df6db016cd208167a33
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: value
+      value: part_b_6.xml
+  time:timestamp: '2022-05-18T18:34:52.624+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Part B
+  id:id: a11
+  cpee:activity: a11
+  cpee:activity_uuid: 2246c4c7caf41df6db016cd208167a33
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2022-05-18T18:35:16.756+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Part B
+  id:id: a11
+  cpee:activity: a11
+  cpee:activity_uuid: 2246c4c7caf41df6db016cd208167a33
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:35:16.783+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Product A
+  id:id: a10
+  cpee:activity: a10
+  cpee:activity_uuid: 1b59b72ae66a774c468e3974a4c26df6
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2022-05-18T18:35:27.583+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Receive Product A
+  id:id: a10
+  cpee:activity: a10
+  cpee:activity_uuid: 1b59b72ae66a774c468e3974a4c26df6
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:35:27.602+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Manufacture Product
+  id:id: a12
+  cpee:activity: a12
+  cpee:activity_uuid: 113f74593e056749e25e6f80eafedfd2
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: timeout
+      value: '30'
+  time:timestamp: '2022-05-18T18:35:27.692+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Manufacture Product
+  id:id: a12
+  cpee:activity: a12
+  cpee:activity_uuid: 113f74593e056749e25e6f80eafedfd2
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 'Timeout: 30'
+  time:timestamp: '2022-05-18T18:35:57.646+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Manufacture Product
+  id:id: a12
+  cpee:activity: a12
+  cpee:activity_uuid: 113f74593e056749e25e6f80eafedfd2
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:35:57.654+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Check Product
+  id:id: a13
+  cpee:activity: a13
+  cpee:activity_uuid: 51f514271baabe8ba26bf6dc6ceb39a0
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: timeout
+      value: '15'
+  time:timestamp: '2022-05-18T18:35:57.687+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Check Product
+  id:id: a13
+  cpee:activity: a13
+  cpee:activity_uuid: 51f514271baabe8ba26bf6dc6ceb39a0
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 'Timeout: 15'
+  time:timestamp: '2022-05-18T18:36:12.685+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Check Product
+  id:id: a13
+  cpee:activity: a13
+  cpee:activity_uuid: 51f514271baabe8ba26bf6dc6ceb39a0
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:36:12.693+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Deliver Product
+  id:id: a14
+  cpee:activity: a14
+  cpee:activity_uuid: ec6a7c14b7cf05c419a3875816db4fef
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: file
+      value: product_6.xml
+  time:timestamp: '2022-05-18T18:36:12.728+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Deliver Product
+  id:id: a14
+  cpee:activity: a14
+  cpee:activity_uuid: ec6a7c14b7cf05c419a3875816db4fef
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2022-05-18T18:36:12.809+02:00'
+---
+event:
+  concept:instance: 3400
+  concept:name: Deliver Product
+  id:id: a14
+  cpee:activity: a14
+  cpee:activity_uuid: ec6a7c14b7cf05c419a3875816db4fef
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T18:36:12.816+02:00'
+---
+event:
+  concept:instance: 3400
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 876e6eb3-fbfb-4bf3-88fd-f426da6063ae
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: state/change
+  cpee:state: finished
+  time:timestamp: '2022-05-18T18:36:12.844+02:00'

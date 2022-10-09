@@ -1,0 +1,10 @@
+correlate/*
+!correlate/.gitkeep
+messages/*
+!messages/.gitkeep
+
+message-templates/*
+!message-templates/.gitkeep
+
+node_modules/*
+.idea/

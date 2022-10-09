@@ -1,0 +1,377 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 3341
+    cpee:name: choice2
+    cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+---
+event:
+  concept:instance: 3341
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: state/change
+  cpee:state: ready
+  time:timestamp: '2022-05-18T15:07:03.345+02:00'
+---
+event:
+  concept:instance: 3341
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - instance
+    data_values:
+      instance: '1'
+  time:timestamp: '2022-05-18T15:07:03.364+02:00'
+---
+event:
+  concept:instance: 3341
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - timeout
+    - corr
+    data_values:
+      timeout: https://cpee.org/services/timeout.php
+      corr: https://cpee.org/~demo/corrins/corr.php
+  time:timestamp: '2022-05-18T15:07:03.387+02:00'
+---
+event:
+  concept:instance: 3341
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - creator
+    - author
+    - modeltype
+    - guarded
+    - guarded_id
+    - model_uuid
+    - model_version
+    - theme
+    - design_dir
+    - design_stage
+    data_values:
+      info: choice2
+      creator: Christine Ashcreek
+      author: Christine Ashcreek
+      modeltype: CPEE
+      guarded: none
+      guarded_id: ''
+      model_uuid: 8a4d4f43-10e6-4029-bae7-234b556007a8
+      model_version: ''
+      theme: extended
+      design_dir: Distributed.dir
+      design_stage: development
+  time:timestamp: '2022-05-18T15:07:03.398+02:00'
+---
+event:
+  concept:instance: 3341
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: description/change
+  cpee:description: |
+    <?xml version="1.0"?>
+    <description xmlns="http://cpee.org/ns/description/1.0">
+      <call id="a1" endpoint="timeout">
+        <parameters>
+          <label>C</label>
+          <method>:post</method>
+          <arguments>
+            <timeout>30</timeout>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a2" endpoint="corr">
+        <parameters>
+          <label>Receive Order</label>
+          <method>:post</method>
+          <arguments>
+            <value>!"order_" +  data.instance.to_s + ".xml"</value>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a3" endpoint="timeout">
+        <parameters>
+          <label>D</label>
+          <method>:post</method>
+          <arguments>
+            <timeout>25</timeout>
+          </arguments>
+        </parameters>
+        <annotations>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <explanations/>
+          </_timing>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+    </description>
+  time:timestamp: '2022-05-18T15:07:03.411+02:00'
+---
+event:
+  concept:instance: 3341
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - instance
+    data_values:
+      instance: '2'
+  time:timestamp: '2022-05-18T15:07:07.779+02:00'
+---
+event:
+  concept:instance: 3341
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: state/change
+  cpee:state: running
+  time:timestamp: '2022-05-18T15:07:19.372+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: C
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 07ab89ab9204bbc3c76c0226704417b5
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: timeout
+      value: '30'
+  time:timestamp: '2022-05-18T15:07:19.408+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: C
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 07ab89ab9204bbc3c76c0226704417b5
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 'Timeout: 30'
+  time:timestamp: '2022-05-18T15:07:49.398+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: C
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 07ab89ab9204bbc3c76c0226704417b5
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T15:07:49.423+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: Receive Order
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: cd8e66a43661fed9b0830e5aaa11895c
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: value
+      value: order_2.xml
+  time:timestamp: '2022-05-18T15:07:49.462+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: Receive Order
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: cd8e66a43661fed9b0830e5aaa11895c
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/xml
+      data: '0'
+  time:timestamp: '2022-05-18T15:07:49.480+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: Receive Order
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: cd8e66a43661fed9b0830e5aaa11895c
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T15:07:49.488+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: D
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 68d60c84de60352f3a697680b9620601
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: timeout
+      value: '25'
+  time:timestamp: '2022-05-18T15:07:49.525+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: D
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 68d60c84de60352f3a697680b9620601
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 'Timeout: 25'
+  time:timestamp: '2022-05-18T15:08:14.488+02:00'
+---
+event:
+  concept:instance: 3341
+  concept:name: D
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 68d60c84de60352f3a697680b9620601
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2022-05-18T15:08:14.498+02:00'
+---
+event:
+  concept:instance: 3341
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4ec4d46d-1f04-4bed-81fc-43f09074d33e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: state/change
+  cpee:state: finished
+  time:timestamp: '2022-05-18T15:08:14.528+02:00'
